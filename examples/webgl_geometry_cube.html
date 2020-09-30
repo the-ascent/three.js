@@ -11,7 +11,7 @@
 		<script type="module">
 
 			import * as THREE from '../build/three.module.js';
-
+			window.THREE = THREE;
 			var camera, scene, renderer;
 			var mesh;
 
@@ -22,9 +22,9 @@
 
 				camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 1, 1000 );
 				camera.position.z = 400;
-
+				window.camera = camera;
 				scene = new THREE.Scene();
-
+				window.scene = scene;
 				var texture = new THREE.TextureLoader().load( 'textures/crate.gif' );
 
 				var geometry = new THREE.BoxBufferGeometry( 200, 200, 200 );
